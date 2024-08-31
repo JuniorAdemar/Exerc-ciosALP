@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main(){
-    string nome = "abacate";
+    string nome = "";
 
     cout <<"Qual seu nome?"<< endl;
 
