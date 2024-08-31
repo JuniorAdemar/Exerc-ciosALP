@@ -5,7 +5,7 @@ int main(){
     char alternativa;
     char correta = 'a';
 
-    cout <<"Qual é o verdadeiro nome do super-herói Batman?"<< endl;
+    cout <<"Qual eh o verdadeiro nome do super-heroi Batman?"<< endl;
     cout <<"a) Bruce Wayne"<< endl;
     cout <<"b) Clark Kent"<< endl;
     cout <<"c) Peter Parker"<< endl;
