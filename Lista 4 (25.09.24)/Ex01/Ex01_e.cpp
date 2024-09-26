@@ -13,14 +13,16 @@ int main(){
     int a;
     float media, soma;
 
+    cout<<"Digite 15 numeros"<<endl;
+
     for(int i=0; i<15-1; i++){
         cin>>a;
         vetor.push_back(a);
         soma+= vetor.at(i); 
         
     }
-    
+
     media = soma/15;
-    cout<<soma<<endl;
-    cout<<fixed<<setprecision(2)<<media<<endl;
+    cout<<"A soma eh: "<<soma<<endl;
+    cout<<fixed<<setprecision(2)<<"A media eh: "<<media<<endl;
 }
