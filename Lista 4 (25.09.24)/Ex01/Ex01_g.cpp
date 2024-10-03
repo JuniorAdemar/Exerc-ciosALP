@@ -17,7 +17,7 @@ int main(){
 
     std::cout<<"Sorteio dos 20 numeros:"<<endl;
 
-    for(int i=0; i<20-1; i++){
+    for(int i=0; i<20; i++){
         V.push_back(rand()%-10);
 
         if(V.at(i)>0)
