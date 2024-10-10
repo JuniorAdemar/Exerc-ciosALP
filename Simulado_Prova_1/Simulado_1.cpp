@@ -5,7 +5,8 @@ using namespace std;
 porcentagem de números positivos, negativos, divisíveis por 2, e divisíveis por 5.*/
 
 int main(){
-    int answer, i=0, positive = 0, negative = 0, div2 = 0, div5 = 0;
+    float answer, positive = 0, negative = 0, div2 = 0, div5 = 0;
+    int i = 0;
     char vet[500];
     
     cout<<"Digite os numeros, para parar digite 0"<<endl;
@@ -51,11 +52,10 @@ int main(){
     float sumN = (negative*100)/(i-1);
     float sum2 = (div2*100)/(i-1);
     float sum5 = (div5*100)/(i-1);
+    
     cout<<"Positivos "<<sumP<<"%"<<endl;
     cout<<"Negativos "<<sumN<<"%"<<endl;
     cout<<"Divisíveis por 2 "<<sum2<<"%"<<endl;
     cout<<"Divisíveis por 5 "<<sum5<<"%"<<endl;
-
-
 
 }
