@@ -4,42 +4,33 @@ números positivos e negativos lidos.
 */
 #include <iostream>
 #include <string>
-#include <vector>
 #include <iomanip>
 
 
 int main(){
-    using namespace std;
 
-    int a, positive = 0, negative = 0, null = 0;
-    vector<int> V;
+    int n, positive = 0, negative = 0, null = 0;
     srand(time(0));
 
-    std::cout<<"Sorteio dos 20 numeros:"<<endl;
+    std::cout<<"Sorteio dos 20 numeros:"<<std::endl;
 
     for(int i=0; i<20; i++){
-        V.push_back(rand()%-10);
-
-        if(V.at(i)>0)
-        {
-            cout<<V.at(i)<<" POSITIVO"<<endl;
+        n = (rand()%20+1)-10;
+        if(n>0){
+            std::cout<<"POSITIVO: "<<n<<std::endl;
             positive++;
         }
-        else if(V.at(i)<0)
-        {
-            cout<<V.at(i)<<" NEGATIVO"<<endl;
+        else if(n<0){
+            std::cout<<"NEGATIVO: "<<n<<std::endl;
             negative++;
         }
-        else
-        {
-            cout<<V.at(i)<<" NULL"<<endl;
+        else{
+            std::cout<<"NULO: "<<n<<std::endl;
             null++;
         }
-
-        
     }
-    cout<<"Positivos: "<<positive<<endl;
-    cout<<"Negativos: "<<negative<<endl;
-    cout<<"Nulos: "<<null<<endl;
+    std::cout<<"Positivos: "<<positive<<std::endl;
+    std::cout<<"Negativos: "<<negative<<std::endl;
+    std::cout<<"Nulos: "<<null<<std::endl;
 
 }
