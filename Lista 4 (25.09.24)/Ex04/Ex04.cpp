@@ -8,7 +8,7 @@ após ele vai fornecer o valor inicial do intervalo, seguido do valor final dest
 int main(){
 
     int start, finish, value;
-    std::cout<<"Digite o numero que queres calcular os divisores"<<std::endl;
+    std::cout<<"Digite o numero do divisor: "<<std::endl;
     std::cin>>value;
 
     std::cout<<"Digite o intervalo que que quer que esses numeros estejam"<<std::endl;
@@ -19,17 +19,16 @@ int main(){
     std::cout<<"Final: "<<std::endl;
     std::cin>>finish;
 
-    std::cout<<"Os divisores de "<<value<<" sao:"<<std::endl;
+    std::cout<<"Os numeros divisiveis por "<<value<<" no intervalo de: "<<start<<" a "<<finish<<" sao: "<<std::endl;
 
     for(int i=start; i<=finish; i++){
         if((i%value) == 0){
-            std::cout<<i<<std::endl;
+            std::cout<<i;
+            std::cout<<"  ";
         }
     }
-
-
-
-
+    
+    return 0;
 
 
 }

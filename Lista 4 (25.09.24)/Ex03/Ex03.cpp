@@ -65,4 +65,5 @@ int main(){
         std::cin>>ans;
     }while(ans!=n);
 
+    return 0;
 }

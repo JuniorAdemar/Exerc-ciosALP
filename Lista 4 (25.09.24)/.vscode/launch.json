@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Projetos/ExerciciosALP/Lista 4 (25.09.24)/Ex07",
+      "program": "c:/Projetos/ExerciciosALP/Lista 4 (25.09.24)/Ex07/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
