@@ -13,52 +13,63 @@ f. Informe qual jogador venceu, ou se houve empate (o jogador com a maior pontua
 #include <time.h>
 
 #define ROUNDS 5
-#define PLAYERS 5
-
-
+#define PLAYERS 4
+#define MAXPOINTS 2
 
 
 int main(){
-    std::vector player(PLAYERS, 0);
-    int drawNumber;
-    std::vector<int> winner(2, 0), winnerPoints(2, 0);
+    std::vector<int> players(PLAYERS, 0), winner; //pontuações dos players, cada número do índice é um player
+    int drawnPoints, winnerPoints = 0, control = 0;
+    bool draw = 0;
 
-    srand(time(0));
+    srand(time(0)); //seta a semente pra rand()
+    for(int i=0; i<ROUNDS; i++){ //for para rouds
 
-    std::cout<<"Começando o jogo, ele possui "<<ROUNDS<<" rodadas e "<<PLAYERS<<" jogadores :)"<<std::endl;
+        for(int j=0; j<PLAYERS; j++){//for para os players
 
-    for(int i = 0; i<ROUNDS; i++){
+            drawnPoints = rand()%(MAXPOINTS+1); //sorteia e atribui o valor aleatório
+            players[j] += drawnPoints;
 
-        for(int j=0; j<PLAYERS-1; j++){
-            drawNumber = rand()%2+1; //sorteia de 0 a 100
-            player[j] += drawNumber; //adicioina a pontuação sorteada no valor do vetor
-            std::cout<<j+1<<" : "<<player[j]<<"   ";
-            if(drawNumber>80){
-                std::cout<<"Rodada Destaque    ";
+            std::cout<<j+1<<":"<<players[j]<<" "; //printa a pontuação de cada player
+
+            if(players[j]>winnerPoints){
+                winnerPoints = players[j];
+            }
+
+
+            if(drawnPoints>80){ //teste da rodada destaque
+                std::cout<<"<--Rodada destaque ";
             }
         }
         std::cout<<std::endl;
+
     }
 
-    for(int i = 0; i<player.size(); i++){
 
-        if(player[i]>=winnerPoints[0]){
-            if(player[i] == winnerPoints[0]){
-                winner[1] = i+1;
-                winnerPoints[1] = winnerPoints[0];
+    for(int i=0; i<PLAYERS; i++){ //testa se houve empate
+        if(players[i] == winnerPoints){
+
+            winner.push_back(i);
+
+            if(winner.size()>1){
+                draw = 1;
             }
 
-            winnerPoints[0] = player[i];
-            
-            winner[0] = i+1; //define o ganhador se for maior que a pontuação do player anterior
         }
     }
-    if(winner[0] == winner[1]){
-        std::cout<<"Empatou entre o "<<winner[0]<<" e o " <<winner[1]<< " sua pontuacao eh: "<<winnerPoints[0]<<std::endl;
+
+    if(draw){
+        std::cout<<"Empatou entre os players: ";
+        for(const int& player : winner){
+            std::cout<<player+1;
+            std::cout<<", ";
+        }
+        std::cout<<"sua pontuacao eh:"<<winnerPoints;
 
     }else{
-        std::cout<<"Ganhador eh o jogador "<<winner[0]<<" e a sua pontuacao eh: "<<winnerPoints[0]<<std::endl;
+        std::cout<<"Ganhador: "<<winner[0]+1<<" com pontuacao de: "<<winnerPoints;
+
     }
 
-//TODO: resolver o problema do empate, define o mesmo jogador pro empate, não faz sentido.
+
 }
