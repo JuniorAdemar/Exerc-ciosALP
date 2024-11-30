@@ -1,10 +1,5 @@
-/*Escreva um algoritmo que preenche uma matriz 4x6 com valores inteiros aleatórios entre -10 e
-10. Calcule as somas:
-a. dos elementos da segunda linha
-b. dos elementos da quinta coluna
-c. da multiplicação dos elementos da primeira linha pelos elementos da quarta linha
-d. dos elementos só das colunas com índices pares
-e. dos elementos só das linhas com índices ímpares*/
+/*5. Encontre o maior e o menor valor da matriz gerada no exercício anterior.
+*/
 #include <iostream>
 #include <time.h>
 
@@ -13,7 +8,7 @@ e. dos elementos só das linhas com índices ímpares*/
 
 int main() {
     int matriz[ROWS][COLUMNS];
-    int a = 0, b = 0, c = 0, d = 0, e = 0;
+    int a = 0, b = 0, c = 0, d = 0, e = 0, bigger = 0, smaller = 10;
     srand(time(0));
 
 
@@ -42,6 +37,12 @@ int main() {
             if(i%2){
                 e += matriz[i][j];
             }
+            if(matriz[i][j]>bigger){
+                bigger = matriz[i][j];
+            }
+            if(matriz[i][j]<smaller){
+                smaller = matriz[i][j];
+            }
 
             std::cout<<matriz[i][j]<<" ";
         }
@@ -52,6 +53,9 @@ int main() {
     std::cout<<c<<": soma da multiplicacao dos elementos da primeira linha pelos elementos da quarta linha"<<std::endl;
     std::cout<<d<<": soma dos elementos so das colunas com indices pares"<<std::endl;
     std::cout<<e<<": soma dos elementos so das linhas com indices impares"<<std::endl;
+    std::cout<<bigger<<": o maior valor da matriz"<<std::endl;
+    std::cout<<smaller<<": o menor valor da matriz"<<std::endl;
+
 
 
 
